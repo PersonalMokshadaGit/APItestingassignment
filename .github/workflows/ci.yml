@@ -46,7 +46,7 @@ jobs:
 
       # Run Maven tests with env variables
       - name: Run tests and generate Allure results
-        run: mvn clean test
+        run: mvn clean test verify
 
       # Upload Allure test results
       - name: Upload Allure results
