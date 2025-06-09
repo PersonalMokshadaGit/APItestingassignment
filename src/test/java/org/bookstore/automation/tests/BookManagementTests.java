@@ -66,15 +66,15 @@ public class BookManagementTests extends ApiBaseTest {
         APIResponse response = apiRequestContext.post("/books/", options);
         assertEquals(200, response.status(), "Expected status code 201 for book creation.");
 
-        // Parse the response body
+
         String responseBody = response.text();
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = objectMapper.readTree(responseBody);
 
-        // Extract the book ID
+
         bookId = jsonNode.get("id").asText();
 
-        // Assert that the book ID is not null or empty
+
         assertNotNull(bookId, "Book ID should not be null.");
         assertFalse(bookId.isEmpty(), "Book ID should not be empty.");
 
@@ -162,7 +162,7 @@ public class BookManagementTests extends ApiBaseTest {
         APIResponse response = apiRequestContext.post("/books/", options);
         assertEquals(500, response.status(), "Expected status code 201 for book creation.");
 
-        // Parse the response body
+
         String responseBody = response.text();
 
 
